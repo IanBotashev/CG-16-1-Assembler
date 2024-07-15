@@ -1,4 +1,4 @@
-POSSIBLE_INSTRUCTIONS = ["mov", "adc", "int"]
+POSSIBLE_INSTRUCTIONS = ["mov", "adc", "int", "jmp"]
 
 
 class Instruction:

@@ -93,3 +93,20 @@ def test_argument_tokenizing_with_illegal_syntax(tokenizer, string_to_parse, exp
     """
     with pytest.raises(expected_exception):
         tokenizer.parse_string(string_to_parse)
+
+
+@pytest.mark.parametrize(
+    "file_to_parse, expected_tokens",
+    [
+        ("tests/test.asm", [Instruction("adc", arguments=[Argument("a", address=True)]), Instruction("mov", arguments=[Argument("a", address=False), Argument("b", address=False)]), Instruction("jmp", arguments=[Argument(1280, address=False)])]),
+    ])
+def test_file_tokenizing(tokenizer, file_to_parse, expected_tokens):
+    """
+    Tests the tokenizers file parsing
+    :param tokenizer:
+    :param file_to_parse:
+    :param expected_tokens:
+    :return:
+    """
+    tokens = tokenizer.parse_file(file_to_parse)
+    assert tokens == expected_tokens

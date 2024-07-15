@@ -14,8 +14,6 @@ def main(command_args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog="BAssembler", description="Basic and naive assembler for the CG-16-1 processor.")
-    parser.add_argument("-l", "--loop", action="store_true",
-                        help="if set to true, makes the game continuously run in a loop.")
     parser.add_argument("--hex_indicator", '-hi', default="0x",
                         help="Sets what character(s) indicate a hexadecimal when put at the beginning of a number.")
     parser.add_argument("--binary_indicator", "-bi", default="0b",
